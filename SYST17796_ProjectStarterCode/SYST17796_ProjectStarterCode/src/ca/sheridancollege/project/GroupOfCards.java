@@ -17,6 +17,8 @@ import java.util.Collections;
  * @author Harpreet Harpreet 3 March, 2023
  */
 public class GroupOfCards {
+    
+    public static void main(String[] args){
 
     //The group of cards, stored in an ArrayList
    ArrayList<Card> deck = new ArrayList<>();
