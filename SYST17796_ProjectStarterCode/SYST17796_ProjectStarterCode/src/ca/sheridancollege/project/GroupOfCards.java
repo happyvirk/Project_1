@@ -14,6 +14,7 @@ import java.util.Collections;
  *
  * @author dancye
  * @author Paul Bonenfant Jan 2020
+ * @author Harpreet Harpreet 3 March, 2023
  */
 public class GroupOfCards {
 
@@ -46,7 +47,7 @@ public class GroupOfCards {
         ArrayList<Player> players = new ArrayList<>();
         players.add(new Player("Abdul"));
         players.add(new Player("Sara"));
-        players.add(new Player("Harbeet"));
+        players.add(new Player("Harpreet"));
         players.add(new Player("Abhay"));
 
         // Deal the cards to the players
