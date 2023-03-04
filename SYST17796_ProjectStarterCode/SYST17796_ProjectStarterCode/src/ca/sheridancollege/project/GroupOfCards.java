@@ -18,38 +18,51 @@ import java.util.Collections;
 public class GroupOfCards {
 
     //The group of cards, stored in an ArrayList
-    private ArrayList<Card> cards;
-    private int size;//the size of the grouping
+   ArrayList<Card> deck = new ArrayList<>();
 
-    public GroupOfCards(int size) {
-        this.size = size;
-    }
+        String[] colors = {"Red", "Yellow", "Green", "Blue"};
+        String[] values = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "Skip", "Reverse", "Draw Two"};
 
-    /**
-     * A method that will get the group of cards as an ArrayList
-     *
-     * @return the group of cards.
-     */
-    public ArrayList<Card> getCards() {
-        return cards;
-    }
+        // Generate the deck
+        for (String color : colors) {
+            for (String value : values) {
+                deck.add(new Card(color, value));
+                if (!value.equals("0")) {
+                    deck.add(new Card(color, value));
+                }
+            }
+        }
 
-    public void shuffle() {
-        Collections.shuffle(cards);
-    }
+        // Add the wild cards
+        for (int i = 0; i < 4; i++) {
+            deck.add(new Card("Wild", "Wild Card"));
+            deck.add(new Card("Wild", "Draw Four"));
+        }
 
-    /**
-     * @return the size of the group of cards
-     */
-    public int getSize() {
-        return size;
-    }
+        // Shuffle the deck
+        Collections.shuffle(deck);
 
-    /**
-     * @param size the max size for the group of cards
-     */
-    public void setSize(int size) {
-        this.size = size;
-    }
+        // Create the players
+        ArrayList<Player> players = new ArrayList<>();
+        players.add(new Player("Abdul"));
+        players.add(new Player("Sara"));
+        players.add(new Player("Harbeet"));
+        players.add(new Player("Abhay"));
+
+        // Deal the cards to the players
+        for (int i = 0; i < 7; i++) {
+            for (Player player : players) {
+                Card card = deck.remove(0);
+                player.drawCard(card);
+            }
+        }
+
+        // Initialize the game state
+        Card topCard = deck.remove(0);
+        UnoGame game = new UnoGame(players, topCard, deck);
+
+        // Start the game
+        game.playGame();
+   }
 
 }//end class
