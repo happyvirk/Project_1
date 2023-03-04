@@ -7,6 +7,12 @@ package ca.sheridancollege.project;
 
 import java.util.ArrayList;
 
+/**
+* @author dancye
+ * @author Paul Bonenfant Jan 2020
+ * @author Sara AbuLehyeh 3 March, 2023
+ */
+
 public class Game {
     public static void main(String[] args) {
         ArrayList<Card> deck = new ArrayList<>();
