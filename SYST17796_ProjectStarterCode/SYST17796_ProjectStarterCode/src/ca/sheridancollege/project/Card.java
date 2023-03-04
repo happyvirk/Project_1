@@ -8,6 +8,11 @@ package ca.sheridancollege.project;
 /**
  * A class to be used as the base Card class for the project.
  */
+/**
+* @author dancye
+ * @author Paul Bonenfant Jan 2020
+ * @author Abdul Rahman Fatouhe 3 March, 2023
+ */
 
 public class Card {
     private String color;
